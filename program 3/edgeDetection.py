@@ -1,9 +1,18 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("tomb-raider-cover.jpg")
-edges = cv2.Canny(img, 200, 300)
-cv2.imshow("image", img)
-cv2.imshow("edges", edges)
-cv2.waitKey(0)
+cap = cv2.VideoCapture(0)
+
+while True:
+    _, frame = cap.read()
+    edges = cv2.Canny(frame, 100, 200)
+
+
+    cv2.imshow("original", frame)
+    cv2.imshow("edges", edges)
+
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        break
+
+
 cv2.destroyAllWindows()
