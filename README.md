@@ -2,7 +2,7 @@
 
 ## Built with
 
-	* OpenCV
+* OpenCV
 
 ## Installation
 
